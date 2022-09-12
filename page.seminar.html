@@ -27,6 +27,8 @@ title: Seminars
 <hr size="1" color="#000000">
 {% endfor %}
 
+
+
 <style>
 details {
     border: 1px solid #aaa;
@@ -62,11 +64,24 @@ details[open] summary {
 /*   margin-top: 10px; */
 /*   margin-bottom: 15px; */
 }
+
+
+div.post-menu-title {
+ /* background-color: blue; */
+ margin-bottom: 0 !important;
+ padding-bottom: 1px;
+ border-bottom: solid 2px red;
+}
+/* div.post-menu {
+  background-color: aqua;
+} */
 div.post-menu-content {
   overflow-y: auto;
   max-height: calc((100vh - 16px) - 150px);
 }
-.post-menu-content ul li {
-  margin-bottom: 10px;
+.post-menu-content ul li.h-h2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #f2f2f2;
 }
 </style>
