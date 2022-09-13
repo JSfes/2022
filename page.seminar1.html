@@ -18,19 +18,6 @@ title: Seminars
     {% endfor %}
 </details>
 
-<hr size="3" color="#000000">
-
-<h2 id="2nd-grade">2年</h2>
-{% for item in site.data.seminar-2nd %}
-<h2 id="2-{{item.class}}-{{item.group}}" class="semi-group">{{ item.title }}</h2>
-<span id="semi-title">
-2-{{ item.class }} {{ item.group }}班 - {{ item.theme }}
-</span><br>
-{{ item.description }}
-<hr size="1" color="#000000">
-{% endfor %}
-
-
 
 <style>
 details {
