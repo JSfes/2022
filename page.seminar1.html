@@ -2,21 +2,19 @@
 layout: about
 title: 1年探究
 ---
+
+
+<h2 id="1st-grade">1年</h2>
+{% for item in site.data.seminar-1st %}
 <details>
     <summary>
-        <h2 id="1st-grade">1年</h2>
+      <h2 id="1-{{item.class}}-{{item.group}}" class="semi-title">{{ item.title }}</h2><br>
+      1-{{ item.class }} {{ item.group }}班 - {{ item.theme }}
     </summary>
-    {% for item in site.data.seminar-1st %}
-    <details>
-        <summary>
-          <h2 id="1-{{item.class}}-{{item.group}}" class="semi-title">{{ item.title }}</h2><br>
-          1-{{ item.class }} {{ item.group }}班 - {{ item.theme }}
-        </summary>
-        {{ item.description }}
-    </details>
-    <hr size="1" color="#000000">
-    {% endfor %}
+    {{ item.description }}
 </details>
+<hr size="1" color="#000000">
+{% endfor %}
 
 
 <style>
