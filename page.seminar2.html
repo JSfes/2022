@@ -1,0 +1,73 @@
+---
+layout: about
+title: Seminars
+---
+
+<h2 id="2nd-grade">2年</h2>
+{% for item in site.data.seminar-2nd %}
+<details>
+    <summary>
+      <h2 id="2-{{item.class}}-{{item.group}}" class="semi-title">{{ item.title }}</h2><br>
+      2-{{ item.class }} {{ item.group }}班 - {{ item.theme }}
+    </summary>
+    {{ item.description }}
+</details>
+<hr size="1" color="#000000">
+{% endfor %}
+
+<style>
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+/* .semi-group { */
+/*   margin-top: 25px !important; */
+/*   margin-bottom: 5px !important; */
+/* } */
+.semi-title {
+  display: inline !important;
+  font-size: 19px !important;
+  font-weight: bold !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+/*   margin-top: 10px; */
+/*   margin-bottom: 15px; */
+}
+
+
+div.post-menu-title {
+ /* background-color: blue; */
+ margin-bottom: 0 !important;
+ padding-bottom: 1px;
+ border-bottom: solid 2px red;
+}
+/* div.post-menu {
+  background-color: aqua;
+} */
+div.post-menu-content {
+  overflow-y: auto;
+  max-height: calc((100vh - 16px) - 150px);
+}
+.post-menu-content ul li.h-h2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #f2f2f2;
+}
+</style>
