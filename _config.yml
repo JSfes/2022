@@ -151,7 +151,8 @@ code_badge:
 # this and add the path to the pages in order as they should show up
 header_pages:
   - index.md
-  - page.seminar.html
+  - page.seminar1.html
+  - page.seminar2.html
   - page.blogs.md
   - page.tags.md
   - page.about.md
