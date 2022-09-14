@@ -152,6 +152,7 @@ header_pages:
   - page.seminar1.html
   - page.seminar2.html
   - page.projects.class.html
+  - page.projects.ext.html
   - page.blogs.md
   - page.tags.md
   - page.about.md
