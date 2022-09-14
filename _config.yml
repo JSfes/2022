@@ -137,7 +137,7 @@ brand_color: "#0075c2"
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-night_mode: "manual"
+night_mode: "off"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
