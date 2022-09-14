@@ -163,6 +163,9 @@ defaults:
     subheading: "Jishukan Secondary School"
     # banner: "Your image url"
 
+include:
+  - page.categories.html
+
 # Banner default settings
 # These banner settings are for global banner default, but you can also
 # config it by the front matter for one specific post
