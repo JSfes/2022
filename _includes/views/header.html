@@ -38,18 +38,20 @@
               {%- if my_page.title -%}
               <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase | escape }}</a>
               {%- else -%}
-                  <div id="google_translate_element" style="display: none;">
-                  </div>
-                  <span class="ct-language">
-                    <ul class="list-unstyled ct-language-dropdown">
-                      {%- for toggle_path in my_page -%}
-                        {%- assign toggle_page = site.pages | where: "path", toggle_path | first -%}
-                        <li>
-                          <a href="{{ toggle_page.url | relative_url }}" class="lang-select">{{ toggle_page.title | upcase | escape }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </span>
+              <span class="page-link">
+                <div id="google_translate_element" style="display: none;">
+                </div>
+                <span class="ct-language">
+                  <ul class="list-unstyled ct-language-dropdown">
+                    <li>
+                      <a href="/seminar1/" class="lang-select">1年探究</a>
+                    </li>
+                    <li>
+                      <a href="/seminar2/" class="lang-select">2年探究</a>
+                    </li>
+                  </ul>
+                </span>
+              </span>
               {%- endif -%}
             {%- endfor -%}
 
