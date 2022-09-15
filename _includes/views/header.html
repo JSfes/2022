@@ -34,44 +34,47 @@
 
           <div class="trigger">
             {%- for path in page_paths -%}
-              {%- assign my_page = site.pages | where: "path", path | first -%}
-              {%- if my_page.title -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase | escape }}</a>
+              {%- assign my_page = site.pages | where: "path", path.url | first -%}
+              {%- if my_page -%}
+                <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase | escape }}</a>
               {%- else -%}
               <span class="page-link">
                 <div id="google_translate_element" style="display: none;">
                 </div>
-                <span class="ct-language">
+                <span class="ct-language toggle-cont-{{ path.name }}">
                   <ul class="list-unstyled ct-language-dropdown">
-                    <li>
-                      <a href="/2022/seminar1/" class="lang-select">1年探究</a>
-                    </li>
-                    <li>
-                      <a href="/2022/seminar2/" class="lang-select">2年探究</a>
-                    </li>
+                    {%- for toggle_path in path.url -%}
+                      {%- assign toggle_page = site.pages | where: "path", toggle_path.url | first -%}
+                      <li>
+                        <a class="page-link" id="toggle-link" href="{{ toggle_page.url | relative_url }}">{{ toggle_page.title | upcase | escape }}</a>
+                      </li>
+                    {%- endfor -%}
                   </ul>
                 </span>
               </span>
               {%- endif -%}
             {%- endfor -%}
-
-            {%- assign name = 'translate_langs' -%}
-            {%- include functions.html func='get_value' -%}
-            {%- assign translate_langs = return -%}
-            {%- if translate_langs.size > 0 -%}
-              {%- assign name = 'lang' -%}
-              {%- include functions.html func='get_value' default='en' -%}
-              {%- assign lang = return -%}
-              <span class="page-link">
-                  {%- include extensions/google-translate.html -%}
-              </span>
-            {%- endif -%}
           </div>
         </nav>
       {%- endif -%}
     </div>
   </div>
 </header>
+
+<style>
+#toggle-link {
+  color: black !important;
+}
+.ct-language-dropdown {
+  width: 140px;
+}
+.toggle-cont-探究::before {
+  content: "▼ 探究";
+}
+.toggle-cont-企画::before {
+  content: "▼ 企画";
+}
+</style>
 
 <script>
   function initHeader() {
