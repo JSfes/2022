@@ -43,12 +43,12 @@
                 </div>
                 <span class="ct-language">
                   <ul class="list-unstyled ct-language-dropdown">
-                    <li>
-                      <a href="/seminar1/" class="lang-select">1年探究</a>
-                    </li>
-                    <li>
-                      <a href="/seminar2/" class="lang-select">2年探究</a>
-                    </li>
+                    {%- for toggle_path in my_page -%}
+                      {%- assign toggle_page = site.pages | where: "path", toggle_path | first -%}
+                      <li>
+                        <a href="{{ toggle_page.url | relative_url }}" class="lang-select">{{ toggle_page.title | upcase | escape }}</a>
+                      </li>
+                    {% endfor %}
                   </ul>
                 </span>
               </span>
