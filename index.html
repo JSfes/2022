@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include views/header.html -%}
+
+    {%- include views/banner.html -%}
+
+    {%- include extensions/hashlocate.html -%}
+
+    {%- include extensions/theme-toggle.html -%}
+
+    {%- include extensions/click-to-top.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+          <section class="main">
+
+            <div class="articles">
+              {% if page.banner == nil %}
+                {% assign banner = page.title %}
+              {% endif %}
+
+              <!-- Homeの中身 -->
+              {{ content }}
+
+              {%- if page.paginator -%}
+                {%- assign paginator = page.paginator -%}
+              {%- elsif paginator == nil -%}
+                {%- assign paginator = site -%}
+              {%- endif -%}
+
+              {%- if paginator.posts.size > 0 -%}
+              <div class="pagination">
+                <!-- Post list links -->
+                <ul class="post-list">
+                  {%- for post in paginator.posts -%}
+                  <li>
+                    {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
+
+                    {% assign article = post.content %}
+                    {% assign lang = post.lang %}
+                    {%- include functions.html func='get_reading_time' -%}
+                    {% assign reading_time = return %}
+                    {%- include functions.html func='get_article_excerpt' -%}
+                    {% assign excerpt = return %}
+                    {%- assign post_url = post.url | relative_url -%}
+
+                    <h2 class="post-title">
+                      <a class="post-link" href="{{ post_url }}">
+                        {{ post.title | escape }}
+                      </a>
+                    </h2>
+                    <div class="post-meta">
+                      <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: date_format }}</span>
+                      <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
+                    </div>
+                    <a class="post-excerpt" href="{{ post_url }}">
+                      <p>
+                      {{ excerpt }} <span class="read_more">Read More</span>
+                      </p>
+                    </a>
+                    <div class="post-tags">
+                      {%- for tag in post.tags -%}
+                      <a class="post-tag" href="{{ '/tags.html ' | relative_url }}#{{tag}}">#{{tag}}</a>
+                      {%- endfor -%}
+                    </div>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+
+                <!-- Pagination links -->
+                {%- if paginator.posts.size < site.posts.size -%}
+                  {%- include views/paginator.html -%}
+                {%- endif -%}
+              </div>
+              {%- endif -%}
+            </div>
+
+          </section>
+          <section class="sidebar" style="margin-left: 15px;">
+            <!-- Get sidebar items -->
+            {%- include functions.html func='log' level='debug' msg='Get categories value' -%}
+
+            {%- include functions.html func='get_categories' -%}
+            {% assign categories = return %}
+
+            {% assign keys = categories %}
+            {% assign field = 'categories' %}
+            {% assign url = '/categories.html' | relative_url %}
+            {%- if include.keys -%}
+              {%- assign keys = include.keys -%}
+            {%- endif -%}
+
+            {%- if include.field -%}
+              {%- assign field = include.field -%}
+            {%- endif -%}
+
+            <div class="common-list">
+              <ul>
+                <li>
+                  <a href="{{ '/' | relative_url }}">
+                    All<span>{{ site.posts.size }}</span>
+                  </a>
+                </li>
+
+                {% for key in  keys %}
+                  <li>
+                    <a href="{{ url }}#h-{{ key }}">
+                      {{ key }} <span>{{ site.posts | where: field, key | size }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+
+      <div class="wrapper">
+        <div class="site-footer-inner">
+          <div>Unpublished Work <span class="copyleft">&copy;</span> 2021-2022 自修祭実行委員会</div>
+          <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+          generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+          another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
