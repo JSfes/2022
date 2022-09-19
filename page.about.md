@@ -2,6 +2,7 @@
 layout: about
 title: About
 permalink: /about/
+sidebar: []
 ---
 
 ## 自修祭
