@@ -15,7 +15,7 @@ sidebar: []
 名前が変わったとはいえ、探究発表はなくなっていません！
 前期生は文化祭の傍ら、教室やステージで普段、自分が調べている探究テーマのプレゼン発表をしています。
 
-<img src="/2022/assets/images/about/seminar.jpg" alt="探究発表" width="50%" style="display: inline;">
+<img src="https://jsfes.github.io/img/about/seminar.jpg" alt="探究発表" width="50%" style="display: inline;">
 
 ^ 昨年度探究発表の様子
 
@@ -23,12 +23,12 @@ sidebar: []
 
 後期生は、各クラスで企画を行ったり、実行委員として行事運営に携わります。文化祭の面が大きいのは後期生かもしれません。
 
-<img src="/2022/assets/images/about/baloon.jpg" alt="実行委員準備1" width="40%" style="display: inline;">
-<img src="/2022/assets/images/about/stair.JPG" alt="実行委員準備2" width="40%" style="display: inline;">
+<img src="https://jsfes.github.io/img/about/baloon.jpg" alt="実行委員準備1" width="40%" style="display: inline;">
+<img src="https://jsfes.github.io/img/about/stair.JPG" alt="実行委員準備2" width="40%" style="display: inline;">
 
 ^ 昨年度自修祭準備の様子
 
-<img src="/2022/assets/images/about/class.JPG" alt="クラス企画準備" width="50%" style="display: inline;">
+<img src="https://jsfes.github.io/img/about/class.JPG" alt="クラス企画準備" width="50%" style="display: inline;">
 
 ^ 昨年度クラス企画準備の様子
 
@@ -36,7 +36,7 @@ sidebar: []
 
 また、ステージではダンス部や器楽部などの部活動、事前に募集した有志や探究を極めた精鋭たちの発表があります。
 
-<img src="/2022/assets/images/about/stage.JPG" alt="ステージ企画" width="50%" style="display: inline;">
+<img src="https://jsfes.github.io/img/about/stage.JPG" alt="ステージ企画" width="50%" style="display: inline;">
 
 ^ 昨年度ESS部ステージ企画の様子
 
